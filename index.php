@@ -1,7 +1,5 @@
 <?php
-require_once __DIR__ . '/controllers/ProductController.php';
+session_start();
 
-$controller = new ProductController();
-$controller->index();
-
-?>
+require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/router.php';

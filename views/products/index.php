@@ -10,13 +10,15 @@
     <h1> Welcome to Cakes by Tina! </h1>
 
     <div class="product-list">
-        <?php foreach ($products as $product): ?>
-            <div class="product">
-                <h2><?= htmlspecialchars($product['product_name']) ?></h2>
-                <p>Price: $<?= htmlspecialchars($product['product_price']) ?></p>
-                <p><?= htmlspecialchars($product['product_desc']) ?></p>
-            </div>
-        <?php endforeach; ?>
+        <?php if (!empty($products)): ?>
+            <ul>
+                <?php foreach($products as $product): ?>
+                    <li><?= htmlspecialchars($product['product_name']) ?> - ₱<?=htmlspecialchars($product['product_price']) ?></li>
+                <?php endforeach; ?>    
+            </ul>
+    <?php else: ?>
+        <p> No products available.</p>
+    <?php endif; ?>
     </div>
     
 </body>
